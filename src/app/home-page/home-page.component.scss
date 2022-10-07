@@ -1,0 +1,90 @@
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 20px;
+    // padding-bottom: 50px;
+    width: 90%;
+    height: fit-content;
+    max-width: 1110px;
+
+}
+.mobile-image{
+    width: 210px;
+}
+.primary{
+    color: #1e293b;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.2;
+    text-align: center;
+}
+.secondary{
+    font-family: "Roboto";
+    margin-top: 36px;
+    font-size: 14px;
+    line-height: 28px;
+    color: #64748b;
+    margin-bottom: 0;
+    text-align: center;
+}
+.home-content{
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+}
+.desktop-image{
+    width: 50%;
+    max-width: 420px;
+    margin-left: 85px;
+}
+.shop-nowButton{
+    margin-top: 20px;
+    cursor: pointer;
+    outline: none;
+}
+@media screen and (max-width:767px) {
+    .desktop-image{
+        display: none;
+    }
+    .navContainer{
+        flex-direction: column;
+        align-items: center;
+        padding: 0px;
+    }
+    .large-screens-images{
+        display: none;
+    }
+}
+@media screen and (min-width:768px) {
+    .mobile-image{
+        display: none;
+    }
+    .mobile-view-image{
+        display: none;
+    }
+    .mobile-container{
+        display: none;
+    }
+    .home-container{
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 60px;
+    }
+    .home-content{
+        align-items: flex-start
+    }
+    .primary{
+        font-size: 46px;
+        text-align: left;
+    }
+    .secondary{
+        font-size: 18px;
+        margin-top: 0;
+        text-align: left;
+    }
+}

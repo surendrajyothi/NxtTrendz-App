@@ -1,0 +1,26 @@
+<!-- <ul>
+    <li *ngFor="let primeProduct of primeDeals">
+        <img src="primeProduct.price"/>
+    </li>
+</ul> -->
+<div class="price-section-container">
+    <h1 class="prime-heading">Exclusive Prime Deals</h1>
+    <ul class="prime-product-container">
+        <li *ngFor="let product of primeDeals" class="each-card">
+            <a routerLink="/products/{{product.id}}">
+                <img src="{{product.image_url}}" alt="prime" class="prime-product-image"/>
+                <p class="product-title">{{product.title}}</p> 
+                <p class="product-brand">by {{product.brand}}</p>
+                <div class="prime-product-rating">
+                    <p class="price">Rs {{product.price}}/-</p>
+                    <button mat-raised-button color="primary" class="button">
+                        {{product.rating}}
+                        <mat-icon class="star">
+                            star_rate
+                        </mat-icon>
+                    </button>
+                </div> 
+            </a>  
+        </li>
+    </ul>
+</div>

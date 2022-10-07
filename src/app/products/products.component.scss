@@ -1,0 +1,70 @@
+.prouct-section {
+  margin: auto;
+  width: 90%;
+  max-width: 1110px;
+}
+.form-container {
+  margin-right: 20px;
+}
+.top-section-drop-down {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.products-container {
+  display: flex;
+  flex-wrap: wrap;
+  .eachProductCard {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    max-width: 320px;
+    border-radius: 6px;
+    .product {
+      width: 100%;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+    .product-brand {
+      color: #6c78a0;
+      font-family: "Roboto";
+      font-size: 20px;
+      font-weight: 500;
+      padding-left: 5px;
+    }
+    .rating {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px;
+    }
+  }
+}
+.paths-container {
+  display: flex;
+  margin-top: 15px;
+}
+.paths {
+  font-size: 20px;
+  padding-right: 10px;
+  color: #273562;
+  margin: 0px !important;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 576px) {
+  .eachProductCard {
+    margin-right: 0px !important;
+  }
+  .paths-container {
+    padding-left: 25px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .paths-container {
+    padding-left: 55px;
+  }
+}

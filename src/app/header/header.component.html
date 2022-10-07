@@ -1,0 +1,76 @@
+<mat-toolbar class="navContainer">
+  <div class="nav-content">
+    <div class="mobile-view-image">
+      <a routerLink="/">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+          alt="websiteLogo"
+          class="websiteImage"
+        />
+      </a>
+      <button class="logoutButton"><mat-icon>logout</mat-icon></button>
+    </div>
+    <div class="large-screens-images">
+      <a routerLink="/">
+        <img
+          src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
+          alt="websiteLogo"
+          class="websiteImage"
+        />
+      </a>
+      <ul class="sections">
+        <li><a routerLink="/">Home</a></li>
+        <li>
+          <a routerLink="/products"> Products </a>
+        </li>
+        <li><a routerLink="/cart">Cart</a></li>
+      </ul>
+      <div *ngIf="changeButton; then login; else logout"></div>
+      <ng-template #login>
+        <a routerLink="/login">
+          <button type="button" mat-raised-button color="primary">Login</button>
+        </a>
+      </ng-template>
+      <ng-template #logout>
+        <button
+          type="button"
+          mat-raised-button
+          color="warn"
+          (click)="userLoggedOut()"
+        >
+          Logout
+        </button>
+        <!-- <MatDialogModule></MatDialogModule> -->
+        <!-- <button mat-raised-button (click)="openDialog('3000ms', '1500ms')">
+          Open dialog slowly
+        </button> -->
+      </ng-template>
+    </div>
+  </div>
+  <!-- list of options endpoint -->
+
+  <!-- mobile options start point -->
+  <div class="mobile-container">
+    <ul class="mobile-view-options">
+      <li>
+        <a routerLink="/">
+          <mat-icon color="primary">home</mat-icon>
+        </a>
+      </li>
+      <li>
+        <a routerLink="/products">
+          <img
+            src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-products-icon.png"
+            class="product-Image"
+            alt="productImage"
+          />
+        </a>
+      </li>
+      <li>
+        <a routerLink="/cart">
+          <mat-icon color="primary">shopping_cart</mat-icon>
+        </a>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

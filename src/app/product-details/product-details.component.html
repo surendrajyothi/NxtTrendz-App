@@ -1,0 +1,88 @@
+<ul class="paths-container">
+  <li class="paths">
+    <a routerLink="/">Home |</a>
+  </li>
+  <li class="paths">
+    <a routerLink="/products">products |</a>
+  </li>
+</ul>
+<!-- <ul class="paths-container">
+  <li *ngFor="let productItem of productDetailsArray" class="paths">
+    <a routerLink="{{ productItem.path }}"> {{ productItem.name }}> </a>
+  </li>
+</ul> -->
+<div class="product-item-detail-container">
+  <div class="product-success-view">
+    <div class="product-details-container">
+      <img
+        src="{{ productDetails.image_url }}"
+        alt="product-image"
+        class="product-detail-image"
+      />
+      <div class="product-description-container">
+        <h1 class="product-detail-title">{{ productDetails.title }}</h1>
+        <p class="product-detail-price">Rs {{ productDetails.price }}/-</p>
+        <div class="review-container">
+          <button mat-raised-button color="primary" class="rating-button">
+            {{ productDetails.rating }}
+            <mat-icon class="star"> star_rate </mat-icon>
+          </button>
+          <p class="review">{{ productDetails.total_reviews }} Reviews</p>
+        </div>
+        <p class="description">{{ productDetails.description }}</p>
+        <p class="available">
+          Available:
+          <span class="spanElement">{{ productDetails.availability }}</span>
+        </p>
+        <p class="available">
+          Brand: <span class="spanElement">{{ productDetails.brand }}</span>
+        </p>
+        <hr class="hrLine" />
+        <div class="quantity-container">
+          <button class="remove-button" (click)="decreaseQuantity()">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <p class="quantity">{{ defaultQuantity }}</p>
+          <button class="remove-button" (click)="increaseQuantity()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+        <button
+          type="button"
+          mat-raised-button
+          color="primary"
+          class="add-to-cart"
+          (click)="addToCart(productDetails, defaultQuantity)"
+        >
+          ADD TO CART
+        </button>
+      </div>
+    </div>
+    <h1 class="similar-product-heading">Similar Products</h1>
+    <ul class="similar-container">
+      <li
+        *ngFor="let eachSimilarProduct of productDetails.similar_products"
+        class="each-similar-product"
+      >
+        <!-- <a routerLink="/products/{{eachSimilarProduct.id}}"> -->
+        <div>
+          <img
+            src="{{ eachSimilarProduct.image_url }}"
+            alt="similar Product"
+            class="similar-image"
+          />
+          <p class="similar-title">{{ eachSimilarProduct.title }}</p>
+          <p class="similar-brand">{{ eachSimilarProduct.brand }}</p>
+          <div class="smilar-rating">
+            <p class="price">Rs {{ eachSimilarProduct.price }}/-</p>
+            <button mat-raised-button color="primary" class="button">
+              {{ eachSimilarProduct.rating }}
+              <mat-icon class="star"> star_rate </mat-icon>
+            </button>
+          </div>
+        </div>
+        <!-- </a> -->
+      </li>
+    </ul>
+  </div>
+</div>

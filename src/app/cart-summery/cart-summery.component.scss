@@ -1,0 +1,25 @@
+.summary {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  padding: 5px;
+  .money-value {
+    font-size: 20px;
+    font-family: "Roboto";
+    color: #87a2bd;
+    margin-bottom: 0;
+  }
+  .cart-item-count {
+    color: #606264;
+    margin-top: 0;
+  }
+  .check-out {
+    background-color: #166ed3;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    border-width: 0;
+    padding: 10px;
+    font-family: "Roboto";
+  }
+}

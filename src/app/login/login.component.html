@@ -1,0 +1,25 @@
+<div class="login-container">
+    <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png" 
+        alt="websiteLogo" class="login-website-logo-mobile-img"/>
+    <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
+     alt="website-login" 
+     class="shopping-image">
+     <form [formGroup]="userDetails" class="form-container" (submit)="formSubmitted()">
+        <img src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png" 
+            alt="websiteLogo" class="websiteImage"/>
+        <mat-form-field floatLabel="always"  appearance="fill" class="form-field">
+            <mat-label class="lable-styling">USERNAME</mat-label>
+            <input type="text" matInput placeholder="UserName" formControlName="username"/>
+         </mat-form-field>
+         <mat-form-field floatLabel="always" appearance="fill" class="form-field">
+            <mat-label class="lable-styling">PASSWORD</mat-label>
+            <input type="password" matInput placeholder="Password" formControlName="password"/>
+         </mat-form-field>
+        <!-- <p *ngIf="error_condition; else elseBlock" class="errorMsg"></p>
+        <ng-template #elseBlock>
+            {{error_Message}}
+        </ng-template> -->
+         <button type="submit" mat-raised-button color="primary" class="loginButton">Login</button>
+        </form>
+</div>
+

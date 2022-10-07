@@ -1,0 +1,61 @@
+<div class="cart-container">
+  <div *ngIf="userProductsArray.length == 0" class="empty-view">
+    <img
+      src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-empty-cart-img.png"
+      alt="empty-cart"
+      class="empty"
+    />
+    <h1 class="empty-title">Your Cart Is Empty</h1>
+    <a routerLink="/products">
+      <button mat-raised-button color="primary">Shop Now</button>
+    </a>
+  </div>
+  <div *ngIf="userProductsArray.length >= 1" class="cart-content-container">
+    <h1 class="cart-heading">My Cart</h1>
+    <button type="button" class="remove-all" (click)="removeAll()">
+      Remove All
+    </button>
+    <ul>
+      <li *ngFor="let eachItem of userProductsArray" class="cart-item">
+        <img src="{{ eachItem.image }}" alt="product" class="cart-image" />
+        <div class="cart-item-container">
+          <div class="cart-title-container">
+            <p class="cart-item-title">{{ eachItem.title }}</p>
+            <p class="cart-item-brand">{{ eachItem.brand }}</p>
+          </div>
+          <div class="quantity-container">
+            <button
+              class="quantity-buttons"
+              (click)="decreaseQuantity(eachItem)"
+            >
+              <mat-icon>remove</mat-icon>
+            </button>
+            <p class="quantity">{{ eachItem.quantity }}</p>
+            <button
+              class="quantity-buttons"
+              (click)="increaseQuantity(eachItem)"
+            >
+              <mat-icon>add</mat-icon>
+            </button>
+          </div>
+          <div class="price-container">
+            <p class="price">Rs {{ eachItem.price * eachItem.quantity }}/-</p>
+            <button
+              type="button"
+              class="remove-button"
+              (click)="deleteItem(eachItem.id)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+        <button class="delete-button" (click)="deleteItem(eachItem.id)">
+          <mat-icon> delete </mat-icon>
+        </button>
+      </li>
+    </ul>
+    <div class="outer-container">
+      <app-cart-summery [productData]="userProductsArray"></app-cart-summery>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+ul {
+  padding-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+li {
+  list-style-type: none;
+  font-size: 14px;
+  margin: 10px;
+  font-weight: 500;
+  font-family: "Roboto";
+}
+
+a {
+  text-decoration: none;
+}
+
+.star {
+  font-size: 19px;
+}
+
+.product-title {
+  color: #171f4b;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding-left: 5px;
+}
+
+.price {
+  color: #171f46;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0px !important;
+}/*# sourceMappingURL=styles.css.map */
