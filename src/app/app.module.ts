@@ -13,7 +13,6 @@ import { HeaderComponent } from './header/header.component';
 import { ProductMModule } from './product-m/product-m.module';
 import { CartMModule } from './cart-m/cart-m.module';
 // import { CartSummeryComponent } from './cart-summery/cart-summery.component';
-import { LogOutComponent } from './log-out/log-out.component';
 
 @NgModule({
 	declarations: [

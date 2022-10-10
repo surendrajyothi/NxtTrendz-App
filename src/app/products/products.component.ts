@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, AfterContentInit, AfterContentChecked, AfterViewChecked } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { AllproductsService } from '../allproducts.service';
@@ -38,22 +38,29 @@ export class ProductsComponent implements OnInit {
 
 	constructor(private _productService: AllproductsService,
 		private _router: Router,
-
 		private _titleService: Title
 	) { }
 
-	selectOption(data) {
+
+	selectOption(data) { // No need to pass the data default 
+		// value for the myFunctionProducts
 		this.defaultValue = data.target.value
+		this.myFunctionProducts()
 	}
 
 	ngOnInit(): void {
 		this._titleService.setTitle(this.title)
+		this.myFunctionProducts()
 
+	}
+
+
+	myFunctionProducts() { // getting products form service file
 		this._productService.getProducts(this.defaultValue).subscribe((data) => {
 			this.productsArray = data
 		})
-
 	}
+
 
 	productDetails(data: any, titleValue: any) {
 		this._titleService.setTitle(`Buy ${titleValue} at NxtTrendz`)

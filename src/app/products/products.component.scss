@@ -12,6 +12,24 @@
   align-items: center;
   margin-top: 24px;
   flex-wrap: wrap;
+  max-width: 1010px;
+  .sorting-container {
+    display: flex;
+    align-items: center;
+    .italic-tag {
+      font-family: sans-serif;
+      font-weight: 700;
+      color: #0f3f79;
+    }
+    .drop-drown {
+      padding: 5px;
+      color: #0f3f79;
+      border-radius: 4px;
+      font-weight: 700;
+      outline: none;
+      margin-left: 10px;
+    }
+  }
 }
 .products-container {
   display: flex;

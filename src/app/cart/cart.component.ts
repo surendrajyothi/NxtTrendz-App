@@ -13,51 +13,83 @@ export class CartComponent implements OnInit {
 
 	userProductsArray: any = [];
 
-	itemsText: string = "";
+	cartPrice: number = 0;
 
-	cartItemPrice: number;
+	cartText: string;
+
+
 
 	constructor(private _cartArray: AllproductsService, private _titleService: Title) { }
 
 	ngOnInit(): void {
 		this._titleService.setTitle(this.title)
-
 		this.userProductsArray = this._cartArray.cartItems
-
+		// this.cartPrice = this._cartArray.calucultarCartPrice()
+		this.getCartTotalPrice()
+		this.getCartTotalItems()
 	}
 
 
+
+	getCartTotalPrice() {
+		let totalPrice = 0
+		for (let eachProductItem of this.userProductsArray) {
+			totalPrice += eachProductItem.price * eachProductItem.quantity
+			this.cartPrice = totalPrice
+		}
+	}
+
+	getCartTotalItems() {
+		if (this._cartArray.cartItems.length === 1) {
+			this.cartText = "1 item available in your cart"
+		}
+		else {
+			this.cartText = `${this._cartArray.cartItems.length} items available in your cart`
+		}
+	}
+
+
+
+	// delete product from array
 	deleteItem(data): void {
-		let resultedArray = this.userProductsArray
-		let filterdArray = resultedArray.filter(each => each.id != data)
-		this.userProductsArray = filterdArray
+		this._cartArray.cartItems = this._cartArray.cartItems.filter(each => each.id != data)
+		this.userProductsArray = this._cartArray.cartItems
+		this.getCartTotalPrice()
+		this.getCartTotalItems()
 	}
 
+	// remove all products from array
 	removeAll(): void {
 		this.userProductsArray = []
+		this._cartArray.cartItems = []
 	}
 
+	// quantity decrease function
+	decreaseQuantity(productItem: any): void {
 
-
-
-	decreaseQuantity(productItem: any) {
 		this.userProductsArray.map(eachItem => {
 			if ((eachItem.quantity > 1) && (eachItem.id === productItem.id)) {
 				let result = eachItem.quantity - 1
 				eachItem.quantity = result
 			}
 		})
+
+		this.getCartTotalPrice()
 	}
 
-	increaseQuantity(productItem: any) {
+	// quantity increase function 
+	increaseQuantity(productItem: any): void {
+
 		this.userProductsArray.map(eachItem => {
 			if (eachItem.id === productItem.id) {
 				let result = eachItem.quantity + 1
 				eachItem.quantity = result
 			}
 		})
-	}
 
+		this.getCartTotalPrice()
+
+	}
 
 
 

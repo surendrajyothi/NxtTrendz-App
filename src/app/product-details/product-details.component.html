@@ -6,11 +6,7 @@
     <a routerLink="/products">products |</a>
   </li>
 </ul>
-<!-- <ul class="paths-container">
-  <li *ngFor="let productItem of productDetailsArray" class="paths">
-    <a routerLink="{{ productItem.path }}"> {{ productItem.name }}> </a>
-  </li>
-</ul> -->
+
 <div class="product-item-detail-container">
   <div class="product-success-view">
     <div class="product-details-container">
@@ -64,24 +60,24 @@
         *ngFor="let eachSimilarProduct of productDetails.similar_products"
         class="each-similar-product"
       >
-        <!-- <a routerLink="/products/{{eachSimilarProduct.id}}"> -->
-        <div>
-          <img
-            src="{{ eachSimilarProduct.image_url }}"
-            alt="similar Product"
-            class="similar-image"
-          />
-          <p class="similar-title">{{ eachSimilarProduct.title }}</p>
-          <p class="similar-brand">{{ eachSimilarProduct.brand }}</p>
-          <div class="smilar-rating">
-            <p class="price">Rs {{ eachSimilarProduct.price }}/-</p>
-            <button mat-raised-button color="primary" class="button">
-              {{ eachSimilarProduct.rating }}
-              <mat-icon class="star"> star_rate </mat-icon>
-            </button>
+        <a routerLink="/products/{{ eachSimilarProduct.id }}">
+          <div>
+            <img
+              src="{{ eachSimilarProduct.image_url }}"
+              alt="similar Product"
+              class="similar-image"
+            />
+            <p class="similar-title">{{ eachSimilarProduct.title }}</p>
+            <p class="similar-brand">{{ eachSimilarProduct.brand }}</p>
+            <div class="smilar-rating">
+              <p class="price">Rs {{ eachSimilarProduct.price }}/-</p>
+              <button mat-raised-button color="primary" class="button">
+                {{ eachSimilarProduct.rating }}
+                <mat-icon class="star"> star_rate </mat-icon>
+              </button>
+            </div>
           </div>
-        </div>
-        <!-- </a> -->
+        </a>
       </li>
     </ul>
   </div>

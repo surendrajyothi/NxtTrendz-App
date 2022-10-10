@@ -1,7 +1,8 @@
 .cart-container {
-  min-height: 75vh;
+  min-height: 65vh;
   display: flex;
   justify-content: center;
+  margin-top: 10px;
   .empty-view {
     display: flex;
     flex-direction: column;
